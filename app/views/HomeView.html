@@ -1,17 +1,26 @@
-<section id="">
-  <div class="container-fluid bg-white">
-    <div class="row py-3">
-      <div id="" class="col-12">
-        <!-- <img src="${this.imgUrl}" alt=""> -->
-      </div>
-      <div id="weather-display" class="h-auto w-auto border border-2 rounded border-dark col-2">
-        <!-- <i class="mdi mdi-weather-sunny fs-2 d-block"></i>
-      <small>73°F Sunny</small> -->
-      </div>
-      <div id="active-quote">
-        <h4 class="text-success"></h4>
-      </div>
-      <button onclick="app.QuotesController.getQuote()">Get New Quote</button>
+<div class="container-fluid">
+  <div class="row py-3">
+    <div id="" class="col-12">
+      <!-- <img src="${this.imgUrl}" alt=""> -->
     </div>
+    <div id="weather-display" class="h-auto w-auto border border-2 rounded border-dark col-2">
+      <!-- <i class="mdi mdi-weather-sunny fs-2 d-block"></i>
+      <small>73°F Sunny</small> -->
+    </div>
+    <div id="active-quote" class="col-8 w-auto">
+      <!-- <h4 class="text-success"></h4> -->
+    </div>
+    <!-- <button class="fs-6 w-auto p-3 rounded btn border border-4 btn-outline-dark" -->
+    <i role="button" class="fs-2 text-dark mdi mdi-refresh" onclick="app.QuotesController.getQuote()"></i>
   </div>
-</section>
+  <div class="col-3" id="todos-list">
+    <!-- <p class="bg-secondary rounded p-1 fw-light text-danger">Todo Description</p> -->
+  </div>
+  <div>
+    <form id="todos-form" onsubmit="app.TodosController.newTodo()">
+      <label for="description" class="d-block">New Todo</label>
+      <input type="text" name="description" id="description">
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</div>

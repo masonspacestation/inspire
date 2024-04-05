@@ -19,7 +19,8 @@ export class Quote {
 
   get quoteDisplay() {
     return `
-    
+    <h4 class=" text-center fw-bold text-secondary">${this.body}</h4>
+    <p class="text-end text-secondary fw-light">— ${this.author}</p>
     `
   }
 

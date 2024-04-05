@@ -6,7 +6,7 @@ export class Weather {
   constructor(data) {
     this.name = data.name
     this.temp = data.main.temp
-    this.weather = data.weather.description
+    this.weather = data.weather[0].main
     this.icon = data.weather.icon
   }
 
