@@ -1,6 +1,7 @@
 import { AppState } from "../AppState.js";
 import { todosService } from "../services/TodosService.js";
 import { getFormData } from "../utils/FormHandler.js";
+import { Pop } from "../utils/Pop.js";
 import { setHTML } from "../utils/Writer.js";
 
 
@@ -40,9 +41,20 @@ export class TodosController {
     setHTML('todos-list', todosList)
   }
 
+  drawTodosCount() {
 
-  deleteTodo(todoId) {
+  }
+
+  toggleCompletion(todoId) {
+    console.log('toggling completion for ', todoId);
+
+  }
+
+
+  async deleteTodo(todoId) {
     try {
+      const result = await Pop.confirm('Are you sure you want to delete this todo? How ever will you remember?')
+      if (result == false) return
       todosService.deleteTodo(todoId)
     } catch (error) {
       console.error('failed to delete todo', error)

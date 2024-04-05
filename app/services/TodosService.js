@@ -8,8 +8,8 @@ class TodosService {
   async deleteTodo(todoId) {
     const response = await api.delete(`api/todos/${todoId}`)
     console.log('🗑️', response);
-    // const todoToDelete = AppState.todos.findIndex(todo => todo.id == todoId)
-
+    const indexToDelete = AppState.todos.findIndex(todo => todo.id == todoId)
+    AppState.todos.splice(indexToDelete, 1)
   }
 
 

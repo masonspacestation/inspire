@@ -14,7 +14,7 @@ export class Todo {
 
   get TodoListTemplate() {
     return `
-    <input type="checkbox" name="completed" id="completed">
+    <input type="checkbox" ${this.completed ? 'checked' : ''} checked name="completed" id="completed" onChange="app.TodosController.toggleCompletion('${this.id}')">
     <p class="bg-secondary rounded p-1 fw-light text-danger">${this.description}
     <button onclick="app.TodosController.deleteTodo('${this.id}')"><i class="mdi mdi-delete-outline"></i></button>
     </p>
