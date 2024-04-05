@@ -11,6 +11,12 @@
 }
 
 #imgBG {
-  /* position: absolute; */
+  position: absolute;
   background-size: cover;
+}
+
+body {
+  background-color: turquoise;
+  background-size: cover;
+  background-position: center;
 }

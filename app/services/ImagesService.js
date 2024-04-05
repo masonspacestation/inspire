@@ -17,7 +17,11 @@ class ImagesService {
 
 
 
-
+  // const response = await nasaApi.get('apod')
+  // console.log('🚀🛰️', response.data);
+  // const apod = new Apod(response.data) // converting one thing, no need for mapping
+  // AppState.activeApod = apod
+  // console.log('🗃️', AppState.activeApod);
 
 
 

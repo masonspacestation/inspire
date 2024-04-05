@@ -24,10 +24,18 @@ export class ImagesController {
 
   drawImage() {
     // const imgBG = ''
-    let bgImg = AppState.image.imgBgElem
-    setHTML('imgBG', bgImg)
+    const bgImg = AppState.image
+    // setHTML('bg-img', bgImg.imgBgTemplate)
+    document.body.style.backgroundImage = `url(${bgImg.imgUrl})`
   }
 
+
+
+
+
+  // const activeApod = AppState.activeApod
+  // setHTML('active-apod', activeApod.ActiveApodTemplate)
+  // document.body.style.backgroundImage = `url(${activeApod.imgUrl})`
 
 
 

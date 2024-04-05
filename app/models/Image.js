@@ -15,7 +15,7 @@ export class Image {
 
 
 
-  get imgBgElem() {
+  get imgBgTemplate() {
     return `
 <img src="${this.imgUrl}" alt="">
 `
