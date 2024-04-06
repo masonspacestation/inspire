@@ -8,14 +8,43 @@ export class Weather {
     this.temp = data.main.temp
     this.weather = data.weather[0].main
     this.icon = data.weather.icon
+    this.tempFormat = data.tempFormat ? data.tempFormat : 'F' //default value
+    this.tempConverted = TempFormatConversion(this.temp, this.tempFormat)
   }
 
   get weatherDisplayTemplate() {
     return `
   <h5 class='d-block'>${this.name}</h5>
   <img src="${this.icon}" class="d-block">
-  <small>${this.temp}°F ${this.weather}</small>
+  <button onClick="app.WeatherController.tempFormatToggle()" class="clickable">
+  <small>${this.tempConverted} | ${this.weather}</small>
+  </button>
   `
+    // <small>${this.temp}°F ${this.weather}</small>
+    // <small>${this.FahrenheitDisplay} ${this.weather}</small>
+    // <small>${this.CelsiusDisplay} ${this.weather}</small>
   }
 
+}
+
+
+function TempFormatConversion(temp, tempFormat) {
+  // const fTempDisplay = ((this.temp - 273.15) * 9 / 5 + 32).toFixed(0)
+  // const cTempDisplay = (this.temp - 273.15).toFixed(0)
+  // if (tempFormat == 'F') {
+  //   return `
+  //   ${fTempDisplay}°F
+  //   `
+  // } else {
+  //   return `
+  // ${cTempDisplay}°C
+
+  let tempDisplay = ''
+
+  if (tempFormat == 'F') {
+    tempDisplay += `${((temp - 273.15) * 9 / 5 + 32).toFixed(0)}F°`
+  } else {
+    tempDisplay += `${(temp - 273.15).toFixed(0)}C°`
+  }
+  return tempDisplay
 }

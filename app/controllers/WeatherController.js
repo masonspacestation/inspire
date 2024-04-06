@@ -23,9 +23,19 @@ export class WeatherController {
 
 
   drawWeather() {
-    // formula for Kelvin to f (1K − 273.15) × 9/5 + 32 = -457.9°F
+
     const weatherDisplay = AppState.weather.weatherDisplayTemplate
     // console.log(weatherDisplay);
     setHTML('weather-display', weatherDisplay)
+  }
+
+  tempFormatToggle() {
+    let activeTempFormat = AppState.weather.tempFormat
+    console.log('toggling weather', activeTempFormat);
+    if (activeTempFormat == 'C') {
+      activeTempFormat = 'F'
+    } else if (activeTempFormat == 'F') {
+      activeTempFormat = 'C'
+    }
   }
 }

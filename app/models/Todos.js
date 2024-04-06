@@ -8,7 +8,6 @@ export class Todo {
     this.id = data.id
     this.description = data.description
     this.completed = data.completed
-    // this.completed = data.completed ? true : false
     this.creatorId = data.creatorId
   }
 
