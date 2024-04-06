@@ -5,6 +5,16 @@ import { AppState } from "../AppState.js";
 
 
 class TodosService {
+  async toggleCompletion(todoId) {
+    const toggledTodo = AppState.todos.find(todo => todo.id == todoId)
+    toggledTodo.completed = !toggledTodo.completed
+    // console.log('found ', toggledTodo.description);
+    const response = await api.put(`api/todos/${todoId}`, toggledTodo)
+    // const todoId.completed = !todoId.completed
+    // console.log('toggled completion on ', toggledTodo);
+  }
+
+
   async deleteTodo(todoId) {
     const response = await api.delete(`api/todos/${todoId}`)
     console.log('🗑️', response);

@@ -2,7 +2,7 @@ import { AppState } from "../AppState.js";
 import { todosService } from "../services/TodosService.js";
 import { getFormData } from "../utils/FormHandler.js";
 import { Pop } from "../utils/Pop.js";
-import { setHTML } from "../utils/Writer.js";
+import { setHTML, setText } from "../utils/Writer.js";
 
 
 
@@ -12,6 +12,7 @@ export class TodosController {
     console.log('📋🎮');
     AppState.on('account', this.getTodos)
     AppState.on('todos', this.drawTodos)
+    AppState.on('todos', this.drawTodosCount)
 
   }
 
@@ -42,12 +43,37 @@ export class TodosController {
   }
 
   drawTodosCount() {
+    // let todosCount = ''
+    const myTodosCount = AppState.todos.length
+    // myTodosCount.forEach(todo => todosCount += todo)
+    const completedTodosCount = AppState.todos.filter(todo => todo.completed == true).length
+    setText('todos-count', `${completedTodosCount} / ${myTodosCount}`)
+    // console.log(completedTodosCount)
+    // this.drawTodosMessage(completedTodosCount)
 
   }
 
-  toggleCompletion(todoId) {
-    console.log('toggling completion for ', todoId);
 
+  // drawTodosMessage(completedTodosCount) {
+  //   console.log('completed todos count: ', completedTodosCount);
+  //   let todosMessage = ``
+  //   if (completedTodosCount == 0) {
+  //     todosMessage += `<small>All done 🤙</small>`
+  //   } else if (completedTodosCount <= 3 && completedTodosCount > 0) {
+  //     todosMessage += `<small>Keep it up 👏</small>`
+  //   } else {
+  //     todosMessage += `<small>Incomplete todos</small>`
+  //   }
+  //   setHTML('todos-message', todosMessage)
+  // }
+
+  async toggleCompletion(todoId) {
+    console.log('toggling completion for ', todoId);
+    try {
+      await todosService.toggleCompletion(todoId)
+    } catch (error) {
+      console.error('failed to toggle todo ', error)
+    }
   }
 
 

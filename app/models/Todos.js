@@ -1,3 +1,4 @@
+import { AppState } from "../AppState.js"
 
 
 
@@ -14,12 +15,13 @@ export class Todo {
 
   get TodoListTemplate() {
     return `
-    <input type="checkbox" ${this.completed ? 'checked' : ''} checked name="completed" id="completed" onChange="app.TodosController.toggleCompletion('${this.id}')">
+    <input type="checkbox" ${this.completed ? 'checked' : ''} name="completed" id="completed" onChange="app.TodosController.toggleCompletion('${this.id}')">
     <p class="bg-secondary rounded p-1 fw-light text-danger">${this.description}
     <button onclick="app.TodosController.deleteTodo('${this.id}')"><i class="mdi mdi-delete-outline"></i></button>
     </p>
     `
   }
+
 
 
 }
