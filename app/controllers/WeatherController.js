@@ -29,13 +29,18 @@ export class WeatherController {
     setHTML('weather-display', weatherDisplay)
   }
 
-  tempFormatToggle() {
-    let activeTempFormat = AppState.weather.tempFormat
-    console.log('toggling weather', activeTempFormat);
-    if (activeTempFormat == 'C') {
-      activeTempFormat = 'F'
-    } else if (activeTempFormat == 'F') {
-      activeTempFormat = 'C'
+  async tempFormatToggle() {
+    try {
+      let activeTempFormat = AppState.weather.tempFormat
+      await weatherService.tempFormatToggle(activeTempFormat)
+      console.log('toggling weather', activeTempFormat);
+    } catch (error) {
+      console.error('it rains on us all', error);
     }
+    // if (activeTempFormat == 'C') {
+    //   activeTempFormat = 'F'
+    // } else if (activeTempFormat == 'F') {
+    //   activeTempFormat = 'C'
+    // }
   }
 }
