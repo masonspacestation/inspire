@@ -19,8 +19,10 @@ export class Quote {
 
   get quoteDisplay() {
     return `
-    <h4 class=" text-center fw-bold text-secondary">${this.body}</h4>
-    <p class="text-end text-secondary fw-light">— ${this.author}</p>
+    <div class="w-auto">
+    <h2 class=" text-center"><span><i role="button" class="fs-5 me-4 opacity-75 text-white mdi mdi-refresh" onclick="app.QuotesController.getQuote()"></i></span>${this.body}</h2>
+    <p class="text-end fw-light">— ${this.author}</p>
+    </div>
     `
   }
 

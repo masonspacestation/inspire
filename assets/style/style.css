@@ -16,7 +16,33 @@
 }
 
 body {
-  background-color: turquoise;
+  background-color: rgb(28, 28, 28);
   background-size: cover;
   background-position: center;
+}
+
+.bg-frost {
+  color: rgb(217, 217, 217);
+  /* color: rgb(10, 62, 233); */
+  padding: 2em;
+  background-color: #4f4f4fbc;
+  /* filter: blur(5px); */
+
+  /* width: 75%; */
+}
+
+.corners-right {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding-right: 3em;
+}
+
+.corners-left {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding-left: 3em;
+}
+
+#active-quote {
+  text-shadow: 0 1px 5px rgba(0, 0, 0, .1);
 }

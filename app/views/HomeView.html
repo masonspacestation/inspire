@@ -1,21 +1,13 @@
 <div class="container-fluid">
-  <div class="row py-3">
-    <div id="" class="col-12">
-      <!-- <img src="${this.imgUrl}" alt=""> -->
+  <div class="row py-3 justify-content-between">
+
+    <div id="weather-display" class="align-self-end h-auto w-auto corners-right bg-frost col-3">
+      <!-- weather display is here -->
     </div>
-    <div id="weather-display" class="h-auto w-auto border border-2 rounded border-dark col-2">
-      <!-- <i class="mdi mdi-weather-sunny fs-2 d-block"></i>
-      <small>73°F Sunny</small> -->
-    </div>
-    <div id="active-quote" class="col-8 w-auto">
-      <!-- <h4 class="text-success"></h4> -->
-    </div>
-    <!-- <button class="fs-6 w-auto p-3 rounded btn border border-4 btn-outline-dark" -->
-    <i role="button" class="fs-2 text-dark mdi mdi-refresh" onclick="app.QuotesController.getQuote()"></i>
-  </div>
-  <div id="todos-count">
-    <p id="todos-message"></p>
-    <!-- <h6>X / Y</h6>
+    <section id="todos-dashboard" class="col-3 bg-frost corners-left">
+      <div id="todos-count" class="text-end me-4">
+        <p id="todos-message"></p>
+        <!-- <h6>X / Y</h6>
       <p>
         <small>Incomplete Todos</small>
       </p>
@@ -25,18 +17,27 @@
       <p>
         <small>All done 🤙</small>
       </p> -->
+      </div>
+      <div class="mb-5" id="todos-list">
+        <!-- todos list is here -->
+      </div>
+      <div>
+        <hr>
+        <form id="todos-form" onsubmit="app.TodosController.newTodo()">
+          <label for="description" class="d-block">New Todo</label>
+          <input type="text" name="description" id="description" class="form-control">
+          <button type="submit" class="border border-white rounded rounded-2">+</button>
+        </form>
+    </section>
   </div>
-  <div class="col-3" id="todos-list">
-    <!-- <p class="bg-secondary rounded p-1 fw-light text-danger">Todo Description</p> -->
-  </div>
-  <div>
-    <form id="todos-form" onsubmit="app.TodosController.newTodo()">
-      <label for="description" class="d-block">New Todo</label>
-      <input type="text" name="description" id="description">
-      <button type="submit">Submit</button>
-    </form>
-  </div>
-  <div id="clock-display">
+  <h1 id="clock-display" class="fs-1 text-white text-center">
+    <!-- clock is here -->
+  </h1>
+
+  <div class="row justify-content-center">
+    <div id="active-quote" class="col-6 text-white">
+      <!-- quote is here -->
+    </div>
 
   </div>
 </div>
