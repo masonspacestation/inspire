@@ -15,11 +15,11 @@ export class Image {
 
 
 
-  get imgBgTemplate() {
-    return `
-<img src="${this.imgUrl}" alt="">
-`
-  }
+  //   get imgBgTemplate() {
+  //     return `
+  // <img src="${this.imgUrl}" alt="">
+  // `
+  //   }
 
 }
 

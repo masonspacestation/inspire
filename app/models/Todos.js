@@ -14,11 +14,11 @@ export class Todo {
 
   get TodoListTemplate() {
     return `
-    <div>
-    <input type="checkbox" ${this.completed ? 'checked' : ''} class="fs-4 d-inline rounded rounded-2" name="completed" id="completed" onChange="app.TodosController.toggleCompletion('${this.id}')">
-    <p class="fs-5 d-inline rounded p-1 fw-light">${this.description}
-    <span class="text-end me=4" onclick="app.TodosController.deleteTodo('${this.id}')"><i class="mdi mdi-delete"></i></span>
+    <div class="align-items-center d-flex">
+    <input type="checkbox" ${this.completed ? 'checked' : ''} class="form-check-input col-2" name="completed" id="completed" onChange="app.TodosController.toggleCompletion('${this.id}')">
+    <p class="col-8 fs-5 d-inline rounded px-2 mb-0 fw-light">${this.description}
     </p>
+    <span class="col-2 text-end me=4" onclick="app.TodosController.deleteTodo('${this.id}')"><i class="mdi mdi-delete"></i></span>
     </div>
     `
   }

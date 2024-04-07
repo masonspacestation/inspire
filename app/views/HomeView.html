@@ -23,16 +23,16 @@
       </div>
       <div>
         <hr>
-        <form id="todos-form" onsubmit="app.TodosController.newTodo()">
-          <label for="description" class="d-block">New Todo</label>
-          <input type="text" name="description" id="description" class="form-control">
-          <button type="submit" class="border border-white rounded rounded-2">+</button>
+        <form id="todos-form" class="input-group mb-3" onsubmit="app.TodosController.newTodo()">
+          <input type="text" name="description" id="description" class="form-control border-white border"
+            placeholder="new todo">
+          <button class="btn btn-outline-white text-white fw-bold" type="submit">+</button>
         </form>
     </section>
   </div>
-  <h1 id="clock-display" class="fs-1 text-white text-center">
+  <div id="clock-display" class="text-white text-center">
     <!-- clock is here -->
-  </h1>
+  </div>
 
   <div class="row justify-content-center">
     <div id="active-quote" class="col-6 text-white">
