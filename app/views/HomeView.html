@@ -1,9 +1,10 @@
 <div class="container-fluid">
   <div class="row py-3 justify-content-between">
 
-    <div id="weather-display" class="align-self-end h-auto w-auto corners-right bg-frost col-3">
-      <!-- weather display is here -->
-    </div>
+
+    <!-- <div id="weather-display" class="align-self-end h-auto w-auto bg-frost col-3">
+      weather display is here 
+    </div> -->
     <section id="todos-dashboard" class="col-3 bg-frost corners-left">
       <div id="todos-count" class="text-end me-4">
         <p id="todos-message"></p>
@@ -24,20 +25,31 @@
       <div>
         <hr>
         <form id="todos-form" class="input-group mb-3" onsubmit="app.TodosController.newTodo()">
-          <input type="text" name="description" id="description" class="form-control border-white border"
-            placeholder="new todo">
+          <input type="text" name="description" id="description" minlength="2" maxlength="28"
+            class="form-control border-white border" placeholder="new todo">
           <button class="btn btn-outline-white text-white fw-bold" type="submit">+</button>
         </form>
     </section>
   </div>
+
   <div id="clock-display" class="text-white text-center">
     <!-- clock is here -->
   </div>
-
-  <div class="row justify-content-center">
-    <div id="active-quote" class="col-6 text-white">
-      <!-- quote is here -->
+  <h4 id="date-display" class="text-white text-center">
+    <!-- data is here -->
+  </h4>
+  <section class="row justify-content-around">
+    <div id="weather-display" class="col-3 w-75 h-auto border border-white rounded rounded-2 w-auto bg-frost col-3">
+      <!-- weather display is here -->
     </div>
+    <div class="col-6 d-flex justify-content-center">
+      <div id="active-quote" class="mb-5 text-white">
+        <!-- quote is here -->
+      </div>
 
-  </div>
+    </div>
+    <div class="col-3">
+
+    </div>
+  </section>
 </div>

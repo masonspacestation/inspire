@@ -19,14 +19,17 @@ export class Quote {
 
   get quoteDisplay() {
     return `
-    <div class="w-auto">
-    <h3 class=" text-center"><span><i role="button" class="fs-5 me-4 opacity-75 text-white mdi mdi-refresh" onclick="app.QuotesController.getQuote()"></i></span>${this.body}</h3>
-    <p class="text-end fw-light">— ${this.author}</p>
+    <div class="w-auto mt-4">
+    <h3 class="secret-hover mb-0 text-center"><span><i role="button" class="fs-5 me-4 opacity-75 text-white mdi mdi-refresh" onclick="app.QuotesController.getQuote()"></i></span>${this.body}</h3>
+    <p class="reveal mt-0 text-center fw-light">— ${this.author}</p>
     </div>
     `
   }
 
-
+  // <div class="w-auto">
+  // <h3 class=" text-center"><span><i role="button" class="fs-5 me-4 opacity-75 text-white mdi mdi-refresh" onclick="app.QuotesController.getQuote()"></i></span>${this.body}</h3>
+  // <p class="text-end fw-light">— ${this.author}</p>
+  // </div>
 
 
 }

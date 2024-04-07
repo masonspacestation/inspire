@@ -10,7 +10,9 @@ export class ClockController {
   constructor() {
     console.log('🕰️ 🎮');
     this.drawClock()
+    this.drawDate()
     setInterval(this.drawClock, 1000)
+    setInterval(this.drawDate, 360000)
     // this.getClock()
   }
 
@@ -26,7 +28,12 @@ export class ClockController {
   drawClock() {
     let clockDisplay = new Date()
     setHTML('clock-display', clockDisplay.toLocaleTimeString('en-US'))
-
   }
+
+  drawDate() {
+    let dateDisplay = new Date()
+    setHTML('date-display', dateDisplay.toDateString())
+  }
+
 
 }

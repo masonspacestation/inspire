@@ -14,9 +14,9 @@ export class Weather {
 
   get weatherDisplayTemplate() {
     return `
-  <h5 class="d-block text-white">${this.name}</h5>
-  <img src="${this.icon}" class="d-block">
-  <button onClick="app.WeatherController.tempFormatToggle()" class="clickable">
+  <h5 class="d-inline text-white">${this.name}</h5>
+  <img src="${this.icon}" class="">
+  <button onClick="app.WeatherController.tempFormatToggle()" class="d-block clickable">
   <small>${this.tempConverted} | ${this.weather}</small>
   </button>
   `
