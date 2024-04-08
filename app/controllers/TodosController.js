@@ -13,7 +13,7 @@ export class TodosController {
     AppState.on('account', this.getTodos)
     AppState.on('todos', this.drawTodos)
     AppState.on('todos', this.drawTodosCount)
-    // AppState.on('todos', this.drawTodosMessage)
+    AppState.on('todos', this.drawTodosMessage)
   }
 
 
@@ -78,19 +78,19 @@ export class TodosController {
   }
 
 
-  // drawTodosMessage() {
-  //   let incompleteTodos = AppState.todos.map((todo) => todo.completed == false)
-  //   console.log('incomplete todos count: ', incompleteTodos);
-  //   let todosMessage = ``
-  //   if (incompleteTodos.length = 0) {
-  //     todosMessage += `<small>All done 🤙</small>`
-  //   } else if (incompleteTodos.length <= 3 && incompleteTodos.length > 0) {
-  //     todosMessage += `<small>Keep it up 👏</small>`
-  //   } else {
-  //     todosMessage += `<small>Incomplete todos</small>`
-  //   }
-  //   setHTML('todos-message', todosMessage)
-  // }
+  drawTodosMessage() {
+    let incompleteTodos = AppState.todos.filter((todo) => todo.completed == false)
+    console.log('incomplete todos count: ', incompleteTodos);
+    let todosMessage = ``
+    if (incompleteTodos.length == 0) {
+      todosMessage += `<small>All done 🤙</small>`
+    } else if (incompleteTodos.length <= 3 && incompleteTodos.length > 0) {
+      todosMessage += `<small>Keep it up 👏</small>`
+    } else {
+      todosMessage += `<small>Incomplete todos</small>`
+    }
+    setHTML('todos-message', todosMessage)
+  }
 
 
 

@@ -10,8 +10,8 @@ export class Weather {
     this.icon = data.weather.icon
     // this.tempFormat = ConvertTempFormat()
     // this.tempFormat = 'F' ? 'C' : 'F'
-    this.tempFormat = 'F'
     // this.tempFormat = data.tempFormat ? data.tempFormat : 'F' //default value
+    this.tempFormat = 'F'
     this.tempConverted = `${((this.temp - 273.15) * 9 / 5 + 32).toFixed(0)}F°`
   }
 
