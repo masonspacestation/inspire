@@ -17,10 +17,10 @@ export class Weather {
 
   get weatherDisplayTemplate() {
     return `
-  <h5 class="d-inline text-white">${this.name}</h5>
+  <h6 class="d-inline text-white">${this.name}</h6>
   <img src="${this.icon}" class="">
-  <button onClick="app.WeatherController.tempFormatToggle()" class="btn btn-outline-white rounded-pill p-3 px-4 text-white d-inline-block clickable">
-  <small>${this.tempConverted} | ${this.weather}</small>
+  <button onClick="app.WeatherController.tempFormatToggle()" class="btn btn-outline-white rounded-pill p-3 px-4 text-white d-inline clickable">
+  <p class="m-0">${this.tempConverted} | ${this.weather}</p>
   </button>
   `
   }
