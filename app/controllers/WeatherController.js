@@ -35,7 +35,7 @@ export class WeatherController {
       const activeTempFormat = AppState.weather.tempFormat
       console.log('toggling weather 1', activeTempFormat);
       console.log('weather service 1b ', AppState.weather);
-      await weatherService.convertTempFormat(activeTempFormat)
+      await weatherService.tempFormatConversion()
       // await weatherService.tempFormatToggle(activeTempFormat)
       console.log('toggling weather 2', activeTempFormat);
       console.log('weather service 2b ', AppState.weather);

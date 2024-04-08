@@ -8,10 +8,11 @@ export class Weather {
     this.temp = data.main.temp
     this.weather = data.weather[0].main
     this.icon = data.weather.icon
-    this.tempFormat = 'F' ? 'C' : 'F'
-    // this.tempFormat = data.tempFormat// ? data.tempFormat : 'F' //default value
-    this.tempConverted = TempFormatConversion(this.temp, this.tempFormat)
-    this.isFahrenheit = data.isFahrenheit
+    // this.tempFormat = ConvertTempFormat()
+    // this.tempFormat = 'F' ? 'C' : 'F'
+    this.tempFormat = 'F'
+    // this.tempFormat = data.tempFormat ? data.tempFormat : 'F' //default value
+    this.tempConverted = `${((this.temp - 273.15) * 9 / 5 + 32).toFixed(0)}F°`
   }
 
   get weatherDisplayTemplate() {
@@ -35,6 +36,17 @@ export class Weather {
 
 }
 
+function ConvertTempFormat(format) {
+
+  let tempFormat = format
+  if (tempFormat == 'F') {
+    tempFormat = 'C'
+
+  } else {
+    tempFormat = 'F'
+  }
+  return tempFormat
+}
 
 function TempFormatConversion(temp, tempFormat) {
   // const fTempDisplay = ((this.temp - 273.15) * 9 / 5 + 32).toFixed(0)
