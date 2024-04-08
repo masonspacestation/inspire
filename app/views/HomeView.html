@@ -5,13 +5,17 @@
     <!-- <div id="weather-display" class="align-self-end h-auto w-auto bg-frost col-3">
       weather display is here 
     </div> -->
-    <!-- 👇 👇 todos list 👇 👇 -->
+    <!-- 👇 👇 📋 todos list 👇 👇 -->
     <div class="col-3">
       <button class="btn w-100 text-start bg-frost p-1 border-0 my-3 rounded-start-pill ps-3" type="button"
         data-bs-toggle="offcanvas" data-bs-target="#todos-dashboard" aria-controls="offcanvasRight">X / Y Todos
         Remain</button>
 
       <section id="todos-dashboard" class="bg-frost corners-left offcanvas offcanvas-end" tabindex="-1">
+        <div class="offcanvas-header">
+          <h5 id="offcanvasRightLabel">Offcanvas right</h5>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
         <div id="todos-count" class="text-end me-4">
           <p id="todos-message"></p>
           <!-- <h6>X / Y</h6>
@@ -27,44 +31,17 @@
         </div>
 
         <div class="mb-5" id="todos-list">
-          <!-- 👈 👈 todos list 👉 👉 -->
+          <!-- 👈 👈 📋 todos list 👉 👉 -->
         </div>
         <div>
           <hr>
-          <!-- 👇 👇 todos form 👇 👇 -->
+          <!-- 👇 👇 ✅ todos form 👇 👇 -->
           <form id="todos-form" class="input-group mb-3" onsubmit="app.TodosController.newTodo()">
             <input type="text" name="description" id="description" minlength="2" maxlength="28"
               class="form-control border-white border" placeholder="new todo">
             <button class="btn btn-outline-white text-white fw-bold" type="submit">+</button>
           </form>
       </section>
-    </div>
-  </div>
-
-
-  <!-- 👇 👇 offcanvas situation 👇 👇 -->
-  <!-- <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-    aria-controls="offcanvasRight">Toggle right offcanvas</button>
-
-  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-    <div class="offcanvas-header">
-      <h5 id="offcanvasRightLabel">Offcanvas right</h5>
-      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body">
-      ...
-    </div>
-  </div> -->
-  <!-- <button class="btn bg-frost p-1 rounded rounded-start-pill ps-3" type="button" data-bs-toggle="offcanvas"
-    data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">X / Y Todos Remain</button> -->
-
-  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-    <div class="offcanvas-header">
-      <h5 id="offcanvasRightLabel">Offcanvas right</h5>
-      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body">
-      ...
     </div>
   </div>
 

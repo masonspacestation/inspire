@@ -31,16 +31,17 @@ export class WeatherController {
 
   async tempFormatToggle() {
     try {
-      let activeTempFormat = AppState.weather.tempFormat
-      await weatherService.tempFormatToggle(activeTempFormat)
-      console.log('toggling weather', activeTempFormat);
+
+      const activeTempFormat = AppState.weather.tempFormat
+      console.log('toggling weather 1', activeTempFormat);
+      console.log('weather service 1b ', AppState.weather);
+      await weatherService.convertTempFormat(activeTempFormat)
+      // await weatherService.tempFormatToggle(activeTempFormat)
+      console.log('toggling weather 2', activeTempFormat);
+      console.log('weather service 2b ', AppState.weather);
     } catch (error) {
       console.error('it rains on us all', error);
     }
-    // if (activeTempFormat == 'C') {
-    //   activeTempFormat = 'F'
-    // } else if (activeTempFormat == 'F') {
-    //   activeTempFormat = 'C'
-    // }
+
   }
 }
