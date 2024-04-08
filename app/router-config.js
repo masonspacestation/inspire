@@ -15,12 +15,12 @@ export const router = new Router([
     controllers: [ImagesController, QuotesController, WeatherController, TodosController, ClockController],
     view: 'app/views/HomeView.html'
   },
-  // {
-  //   path: '#/account',
-  //   middleware: [AuthGuard],
-  //   controllers: [AccountController],
-  //   view: 'app/views/AccountView.html',
-  // }
+  {
+    path: '#/account',
+    middleware: [AuthGuard],
+    controllers: [AccountController],
+    view: 'app/views/AccountView.html',
+  }
 ])
 
 

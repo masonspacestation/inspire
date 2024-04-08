@@ -29,7 +29,7 @@ body {
   color: rgb(217, 217, 217);
   /* color: rgb(10, 62, 233); */
   padding: 2em;
-  background-color: #40404044;
+  background-color: #4040407e;
   backdrop-filter: blur(10px);
 
   /* width: 75%; */
@@ -53,6 +53,10 @@ body {
 
 #clock-display {
   font-size: 72px;
+}
+
+#date-time {
+  height: 60dvh;
 }
 
 .reveal {
@@ -80,37 +84,3 @@ body {
 .text-shadow {
   text-shadow: 0px 0px 7px rgba(0, 0, 0, 0.5);
 }
-
-/**!SECTION
-
-this is the invisible thing while invisible, and while going back to invisible
-.reveal {
-  transition: all 1s linear;
-  transform: scale(0);
-}
-
-.secret-hover+.reveal {
-  opacity: 0;
-}
-
-.secret-hover:hover+.reveal,
-div.reveal:hover {
-  opacity: 1;
-  transform: scale(1);
-  transition: all 5s linear;
-}
-
-.secret-hover {}
-secret hover is what's visible - has no style attached to it
-reveal is the invisible thing. plain .reveal takes it back to it's original state
-
-when we hover over secret-hover or reveal
-
-
- <h1 class="text-end secret-hover">${this.date.toDateString()} <button onclick="app.SandboxController.saveApod()" class="btn btn-outline-light"></button></h1>
-     <div class="reveal">
-      <p>${this.description}</p>
-      <p class="text-info">${this.author}</p>
-     </div>
-     
-*/

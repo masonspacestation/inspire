@@ -8,6 +8,7 @@ import { setHTML } from "../utils/Writer.js";
 export class WeatherController {
   constructor() {
     console.log('🌪️🎮');
+    weatherService.loadWeather()
     this.getWeather()
     AppState.on('weather', this.drawWeather)
   }
@@ -32,13 +33,13 @@ export class WeatherController {
   async tempFormatToggle() {
     try {
 
-      const activeTempFormat = AppState.weather.tempFormat
-      console.log('toggling weather 1', activeTempFormat);
-      console.log('weather service 1b ', AppState.weather);
+      // const activeTempFormat = AppState.weather.tempFormat
+      // console.log('toggling weather 1', activeTempFormat);
+      // console.log('weather service 1b ', AppState.weather);
       await weatherService.tempFormatConversion()
       // await weatherService.tempFormatToggle(activeTempFormat)
-      console.log('toggling weather 2', activeTempFormat);
-      console.log('weather service 2b ', AppState.weather);
+      // console.log('toggling weather 2', activeTempFormat);
+      // console.log('weather service 2b ', AppState.weather);
     } catch (error) {
       console.error('it rains on us all', error);
     }

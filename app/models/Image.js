@@ -12,15 +12,6 @@ export class Image {
     this.query = data.query
   }
 
-
-
-
-  //   get imgBgTemplate() {
-  //     return `
-  // <img src="${this.imgUrl}" alt="">
-  // `
-  //   }
-
 }
 
 

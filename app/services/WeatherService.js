@@ -2,6 +2,7 @@ import { api } from "./AxiosService.js"
 import { AppState } from "../AppState.js"
 import { Weather } from "../models/Weather.js"
 import { setText } from "../utils/Writer.js";
+import { saveState, loadState } from "../utils/Store.js";
 
 
 class WeatherService {
@@ -13,9 +14,6 @@ class WeatherService {
     AppState.weather = weather
     console.log('⚡️', AppState.weather);
   }
-
-
-
 
 
   async tempFormatConversion() {
@@ -30,28 +28,37 @@ class WeatherService {
       format.tempConverted = `${((format.temp - 273.15) * 9 / 5 + 32).toFixed(0)}F°`
       console.log('service y', AppState.weather);
     }
-    // const response = await api.put('api/weather')
-    // console.log('service z', AppState.weather);
-    // console.log('service xy', response);
-
-
-
+    saveState('weather', AppState.weather)
   }
 
-  //   let tempDisplay = ''
-  //   const temp = AppState.weather.temp
-  //   const weather = AppState.weather.weather
-  //   // ${this.tempConverted} | ${this.weather}
-
-  //   if (tempFormat == 'F') {
-  //     tempDisplay += `${((temp - 273.15) * 9 / 5 + 32).toFixed(0)}F° | ${weather}`
-  //   } else {
-  //     tempDisplay += `${(temp - 273.15).toFixed(0)}C° | ${weather}`
-  //   }
-
-  //   setText('temp-toggle-button', tempDisplay)
-
+  // saveWeather() {
+  //   window.localStorage.setItems("weather", JSON.stringify(weather))
   // }
+
+
+  loadWeather() {
+    // const localWeather = loadState('weather', { Weather })
+    // AppState.weather = localWeather
+    // console.log('weather loaded', AppState.weather);
+    JSON.parse(window.localStorage.getItem("weather"))
+  }
+
+  /**
+     saveJot() {
+      saveState('jots', AppState.jots)
+    }
+  
+    loadJots() {
+      const jotsFromLocalStorage = loadState('jots', [Jot])
+      AppState.jots = jotsFromLocalStorage
+      console.log("we've reached the service");
+    }
+  
+   */
+
+
+
+
 
 
 
@@ -60,40 +67,3 @@ class WeatherService {
 
 export const weatherService = new WeatherService
 
-
-
-
-/**!SECTION
-  async tempFormatToggle(activeTempFormat) {
-    // console.log('weather service 1', activeTempFormat);
-    // console.log('weather service 2 ', AppState.weather);
-    if (activeTempFormat == 'C') {
-      activeTempFormat = 'F'
-      console.log('weather service 3', activeTempFormat);
-    } else if (activeTempFormat == 'F') {
-      activeTempFormat = 'C'
-      console.log('weather service 4', activeTempFormat);
-      console.log('weather service 5 ', AppState.weather);
-    }
-    AppState.weather.tempFormat = activeTempFormat
-    console.log('weather service 6 ', AppState.weather);
-    // const response = await api.put('api/weather', AppState.weather)
-    // console.log('weather service 7', response);
-  }
-
-
-  async convertTempFormat(activeTempFormat) {
-    console.log('convert 1', activeTempFormat);
-    if (activeTempFormat == 'C') {
-      activeTempFormat = 'F'
-      console.log('convert 2', activeTempFormat);
-      console.log('convert 2b', AppState.weather);
-    } else if (activeTempFormat == 'F') {
-      activeTempFormat = 'C'
-      console.log('convert 3', activeTempFormat);
-    }
-    console.log('convert 4', activeTempFormat);
-    return activeTempFormat
-  }
-
- */

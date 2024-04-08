@@ -19,52 +19,33 @@ export class Weather {
     return `
   <h5 class="d-inline text-white">${this.name}</h5>
   <img src="${this.icon}" class="">
-  <button onClick="app.WeatherController.tempFormatToggle()" class="d-inline-block clickable">
+  <button onClick="app.WeatherController.tempFormatToggle()" class="btn btn-outline-white rounded-pill p-3 px-4 text-white d-inline-block clickable">
   <small>${this.tempConverted} | ${this.weather}</small>
   </button>
-  `;
-
-    // `
-    // <input type="checkbox" ${(this.isFahrenheit == true) ? false : true} class="form-check-input col-2" name="completed" id="completed" onChange="app.TodosController.toggleCompletion('${this.id}')">
-    // `
-
-
-    // <small>${this.temp}°F ${this.weather}</small>
-    // <small>${this.FahrenheitDisplay} ${this.weather}</small>
-    // <small>${this.CelsiusDisplay} ${this.weather}</small>
+  `
   }
 
 }
 
-function ConvertTempFormat(format) {
+// function ConvertTempFormat(format) {
 
-  let tempFormat = format
-  if (tempFormat == 'F') {
-    tempFormat = 'C'
+//   let tempFormat = format
+//   if (tempFormat == 'F') {
+//     tempFormat = 'C'
 
-  } else {
-    tempFormat = 'F'
-  }
-  return tempFormat
-}
+//   } else {
+//     tempFormat = 'F'
+//   }
+//   return tempFormat
+// }
 
-function TempFormatConversion(temp, tempFormat) {
-  // const fTempDisplay = ((this.temp - 273.15) * 9 / 5 + 32).toFixed(0)
-  // const cTempDisplay = (this.temp - 273.15).toFixed(0)
-  // if (tempFormat == 'F') {
-  //   return `
-  //   ${fTempDisplay}°F
-  //   `
-  // } else {
-  //   return `
-  // ${cTempDisplay}°C
+// function TempFormatConversion(temp, tempFormat) {
+//   let tempDisplay = ''
 
-  let tempDisplay = ''
-
-  if (tempFormat == 'F') {
-    tempDisplay += `${((temp - 273.15) * 9 / 5 + 32).toFixed(0)}F°`
-  } else {
-    tempDisplay += `${(temp - 273.15).toFixed(0)}C°`
-  }
-  return tempDisplay
-}
+//   if (tempFormat == 'F') {
+//     tempDisplay += `${((temp - 273.15) * 9 / 5 + 32).toFixed(0)}F°`
+//   } else {
+//     tempDisplay += `${(temp - 273.15).toFixed(0)}C°`
+//   }
+//   return tempDisplay
+// }

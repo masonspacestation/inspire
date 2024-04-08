@@ -1,24 +1,24 @@
 <div class="container-fluid">
-  <div class="row py-3 justify-content-end">
-
-
+  <div class="row py-3 justify-content-center">
+    <!-- <nav class="navbar navbar-expand bg-dark text-secondary px-2">
+      <div class="flex-grow-1 justify-content-end align-items-center d-flex" id="authstate"></div>
+    </nav> -->
     <!-- <div id="weather-display" class="align-self-end h-auto w-auto bg-frost col-3">
       weather display is here 
     </div> -->
     <!-- 👇 👇 📋 todos list 👇 👇 -->
     <div class="col-3">
-      <button class="btn w-100 text-start bg-frost p-1 border-0 my-3 rounded-start-pill ps-3" type="button"
-        data-bs-toggle="offcanvas" data-bs-target="#todos-dashboard" aria-controls="offcanvasRight">X / Y Todos
-        Remain</button>
+      <!-- <button class="btn w-100 text-start bg-frost p-1 border-0 my-3 rounded-start-pill ps-3" type="button"
+        data-bs-toggle="offcanvas" data-bs-target="#todos-dashboard" aria-controls="offcanvasRight"
+        id="todos-offcanvas-opener"></button> -->
 
-      <section id="todos-dashboard" class="bg-frost corners-left offcanvas offcanvas-end" tabindex="-1">
+      <section id="todos-dashboard" class="h-50 py-4 bg-frost corners-left offcanvas offcanvas-end" tabindex="-1">
         <div class="offcanvas-header">
-          <h5 id="offcanvasRightLabel">Offcanvas right</h5>
-          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          <h5 id="offcanvasRightLabel"></h5>
         </div>
-        <div id="todos-count" class="text-end me-4">
-          <p id="todos-message"></p>
-          <!-- <h6>X / Y</h6>
+        <!-- <div id="todos-count" class="text-end me-4"> -->
+        <p id="todos-message"></p>
+        <!-- <h6>X / Y</h6>
       <p>
         <small>Incomplete Todos</small>
       </p>
@@ -28,7 +28,7 @@
       <p>
         <small>All done 🤙</small>
       </p> -->
-        </div>
+        <!-- </div> -->
 
         <div class="mb-5" id="todos-list">
           <!-- 👈 👈 📋 todos list 👉 👉 -->
@@ -43,31 +43,34 @@
           </form>
       </section>
     </div>
+
   </div>
 
+  <div id="date-time" class="row align-content-center">
+    <!-- 👇 👇 🕰️ clock 👇 👇 -->
+    <div id="clock-display" class="text-white text-shadow text-center">
+    </div>
 
-  <!-- 👇 👇 clock 👇 👇 -->
-  <div id="clock-display" class="text-white text-shadow text-center">
+    <!-- 👇 👇 📆 date 👇 👇 -->
+    <h4 id="date-display" class="text-white text-shadow text-center">
+    </h4>
   </div>
 
-  <!-- 👇 👇 data 👇 👇 -->
-  <h4 id="date-display" class="text-white text-shadow text-center">
-  </h4>
-
-  <!-- 👇 👇 weather display 👇 👇 -->
   <section class="row align-items-center justify-content-around">
-    <div class="col-3 text-center">
-      <div id="weather-display" class="w-50 h-auto border border-white rounded rounded-2 my-2 p-1 bg-frost">
+    <!-- 👇 👇 🌦️ weather display 👇 👇 -->
+    <div class="col-3 d-flex justify-content-center">
+      <div id="weather-display" class="w-auto text-center h-auto rounded rounded-2 my-2 bg-frost">
       </div>
     </div>
-    <!-- 👇 👇 quote 👇 👇 -->
+    <!-- 👇 👇 💬 quote 👇 👇 -->
     <div class="col-6 mb-5 ">
-      <div id="active-quote" class="text-white">
+      <div id="active-quote" class="text-white h-auto">
       </div>
     </div>
-    <!-- 👇 👇 empty right side div 👇 👇 -->
-    <div class="col-3">
-
+    <!-- 👇 👇 🫙 empty right side div 👇 👇 -->
+    <div class="col-3 d-flex justify-content-center">
+      <button class="btn w-auto bg-frost border-0 rounded-pill p-3 px-4" type="button" data-bs-toggle="offcanvas"
+        data-bs-target="#todos-dashboard" aria-controls="offcanvasRight" id="todos-offcanvas-opener"></button>
     </div>
   </section>
 </div>
