@@ -1,34 +1,24 @@
 <div class="container-fluid">
   <div class="row py-3 justify-content-center">
-    <!-- <div class="flex-grow-1 justify-content-end align-items-center d-flex" id="authstate"></div> -->
-    <!-- <div id="weather-display" class="align-self-end h-auto w-auto bg-frost col-3">
-      weather display is here 
-    </div> -->
+
     <!-- 👇 👇 📋 todos list 👇 👇 -->
     <div class="col-3">
-      <!-- <button class="btn w-100 text-start bg-frost p-1 border-0 my-3 rounded-start-pill ps-3" type="button"
-        data-bs-toggle="offcanvas" data-bs-target="#todos-dashboard" aria-controls="offcanvasRight"
-        id="todos-offcanvas-opener"></button> -->
-
-      <section id="todos-dashboard" class="h-50 py-4 bg-frost corners-left offcanvas offcanvas-end" tabindex="-1">
-        <div class="offcanvas-header">
-          <h5 id="offcanvasRightLabel"></h5>
-        </div>
-        <!-- <div id="todos-count" class="text-end me-4"> -->
+      <div id="todos-dashboard" class="h-50 py-4 bg-frost rounded rounded-2">
+        <h5 id="offcanvasRightLabel"></h5>
         <p id="todos-message"></p>
-        <!-- <h6>X / Y</h6>
-      <p>
-        <small>Incomplete Todos</small>
-      </p>
-      <p>
-        <small>Keep it up 👏</small>
-      </p>
-      <p>
-        <small>All done 🤙</small>
-      </p> -->
-        <!-- </div> -->
 
         <div class="mb-5" id="todos-list">
+          <!-- 👈 👈 📋 todos list 👉 👉 -->
+        </div>
+      </div>
+
+      <section id="xx-todos-dashboard" class="h-50 py-4 bg-frost corners-left offcanvas offcanvas-end" tabindex="-1">
+        <div class="offcanvas-header">
+        </div>
+        <!-- <div id="todos-count" class="text-end me-4"> -->
+        <p id="xx-todos-message"></p>
+
+        <div class="mb-5" id="xx-todos-list">
           <!-- 👈 👈 📋 todos list 👉 👉 -->
         </div>
         <div>
@@ -39,6 +29,7 @@
               class="form-control border-white border" placeholder="new todo">
             <button class="btn btn-outline-white text-white fw-bold" type="submit">+</button>
           </form>
+        </div>
       </section>
     </div>
 
